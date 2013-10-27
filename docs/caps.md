@@ -1,21 +1,21 @@
-Appium server capabilities
+Appium 服务关键字
 ==========
 
-|Capability|Description|Values|
+|关键字|描述|实例|
 |----|-----------|-------|
-|`app`|The absolute local path _or_ remote http URL to an `.ipa` or `.apk` file, or a `.zip` containing one of these. Appium will attempt to install this app binary on the appropriate device first. Can also be one of `chrome` or `chromium` to launch Chrome or Chromium on Android, or `safari` to launch Mobile Safari on iOS. Note that this capability is not required for Android if you specify `app-package` and `app-activity` capabilities (see below).|`/abs/path/to/my.apk` or `http://myapp.com/app.ipa`, `chrome`, `chromium` on Android, `safari` on iOS|
-|`browserName`|name of browser to use|`chrome`, `safari`|
-|`device`|The kind of mobile device or emulator to use|`ios`, `selendroid`, `firefoxos`, `mock_ios`, `android` |
-|`version`|Android API version, iOS Version, Chrome/Safari version| 6.1|
+|`app`|`.ipa` or `.apk`文件所在的本地绝对路径或者远程路径,也可以是一个包括两者的`.zip`. Appium会先尝试安装路径对应的应用在适当的真机或模拟器上.也可以是一个`chrome`或者`chromium`，这样就会在android系统中其中chrome或chromium,也可以是`safari`会启动ios上的safari. 针对Android系统，如果你指定`app-package`和`app-activity`(具体见下面)的话，那么就可以不指定`app`.|比如`/abs/path/to/my.apk`或`http://myapp.com/app.ipa`, Android上的`chrome`, `chromium`, iOS的`safari`|
+|`browserName`|要启动的浏览器的名称|比如`chrome`和`safari`|
+|`device`|要使用的模拟器或真机的类型名称|比如`ios`, `selendroid`, `firefoxos`, `mock_ios`, `android` |
+|`version`|Android API版本, iOS版本, Chrome/Safari版本|比如6.1|
 
 --
 
-#### Android Only
+#### Android特有的
 
-|Capability|Description|Values|
+|关键字|描述|实例|
 |----|-----------|-------|
-|`app-activity`| Activity name for the Android activity you want to launch from your package|`MainActivity`, `.Settings`|
-|`app-package`| Java package of the Android app you want to run|`com.example.android.myApp`, `com.android.settings`|
-|`app-wait-activity`| Activity name for the Android activity you want to wait for|`SplashActivity`|
-|`device-ready-timeout`| Timeout in seconds while waiting for device to become ready|`5`|
-|``compressXml``| [setCompressedLayoutHeirarchy(true)](http://developer.android.com/tools/help/uiautomator/UiDevice.html#setCompressedLayoutHeirarchy(boolean\))| `true`|
+|`app-activity`| 你要启动的Android 应用对应的Activity名称|比如`MainActivity`, `.Settings`|
+|`app-package`| 你想运行的Android应用的包名|比如`com.example.android.myApp`, `com.android.settings`|
+|`app-wait-activity`| 你想要等待启动的Android Activity名称|比如`SplashActivity`|
+|`device-ready-timeout`| 设置一个模拟器或真机准备就绪的时间|比如`5`|
+|``compressXml``| 参考[setCompressedLayoutHeirarchy(true)](http://developer.android.com/tools/help/uiautomator/UiDevice.html#setCompressedLayoutHeirarchy(boolean\))| `true`|
